@@ -36,7 +36,7 @@ describe('OddService', () => {
       expect(odds).toEqual([new Calculate(1, 65)])
     })
 
-    const request = httpMock.expectOne(`http://127.0.0.1:8000/api/odd?n=${dummyResquest.n}&r=${dummyResquest.r}`)
+    const request = httpMock.expectOne(`http://localhost:80/api/odd?n=${dummyResquest.n}&r=${dummyResquest.r}`)
     expect(request.request.method).toBe('GET')
 
     request.flush(dummyOdds)
